@@ -4,11 +4,8 @@ from astropy.table import Table, join
 #Jamie Tayar 2020/09/04 join TIC+APOGEE in the simplest way possible
 #borrows from mergelistsFe2.py
 
-
-
 #read in TIC
 tic1=Table.read("../v7.0/TESS13_jtayar_Tlt13.csv", format="ascii", delimiter=',') 
-
 
 #add the 2M in front of 2MASS ID to make it APOGEE ID
 tic=Table(tic1.filled()['id', 'TWOMASS', 'tmag'], dtype=['a20', 'a20','f'])
